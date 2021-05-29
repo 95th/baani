@@ -1,3 +1,4 @@
+import 'package:baani/baani.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(BaaniApp());
@@ -10,25 +11,26 @@ class BaaniApp extends StatelessWidget {
       home: createApp(),
     );
   }
-
-  Widget createApp() {
-    return Scaffold(
-      appBar: createAppBar(),
-      body: createBody(),
-    );
-  }
-
-  AppBar createAppBar() {
-    return AppBar(
-      title: Center(
-        child: Text("Gurbani"),
-      ),
-    );
-  }
-
-  Widget createBody() {
-    return Center(
-      child: Text("Hello World"),
-    );
-  }
 }
+
+Widget createApp() {
+  return Scaffold(
+    appBar: createAppBar(),
+    body: BaaniSources(),
+  );
+}
+
+AppBar createAppBar() {
+  return AppBar(
+    title: Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: const [
+        Icon(Icons.music_note),
+        Text("Gurbani Live"),
+      ],
+    ),
+    centerTitle: true,
+    backgroundColor: Colors.red,
+  );
+}
+
